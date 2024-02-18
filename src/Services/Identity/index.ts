@@ -3,9 +3,13 @@ import bodyParser from 'body-parser';
 import authRoutes from './Routes/authRoutes';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './swagger';
+import { config } from "dotenv";
 
 const app = express();
-const PORT = 3000;
+
+config();
+
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
